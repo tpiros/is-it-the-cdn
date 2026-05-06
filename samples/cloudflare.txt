@@ -1,0 +1,37 @@
+
+is-it-the-cdn  →  https://developers.cloudflare.com/
+────────────────────────────────────────────────────────────────────────
+CDN             Cloudflare
+POP             VIE  (Vienna, AT)
+Request ID      9f7785376b485bb0
+
+Status          200
+HTTP            HTTP/1.1   alt-svc: h3=":443"; ma=86400
+Remote IP       2606:4700::6810:2bd (IPv6)
+
+Cache           HIT
+
+Timings
+  DNS            1ms
+  TCP           18ms
+  TLS           26ms
+  TTFB         114ms
+  Total        132ms
+
+Probes
+  1: cache HIT     ttfb  114ms
+  2: cache HIT     ttfb  150ms
+
+Diagnosis
+  i CDN identified
+    4 of 5 expected debug headers exposed.
+  ✓ Cache HIT
+    Edge served from cache. Origin not contacted.
+  i Cache stayed warm
+    Both probes HIT. Second TTFB: 150ms.
+  i HTTP/3 available, not used
+    alt-svc advertises h3. This tool used HTTP/1.1 (Node's https module does not speak HTTP/3 yet).
+
+Debug headers exposed
+  4 of 5 expected for Cloudflare
+  cf-ray, cf-cache-status, speculation-rules, server

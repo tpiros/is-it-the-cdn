@@ -1,0 +1,36 @@
+
+is-it-the-cdn  →  https://vercel.com/
+────────────────────────────────────────────────────────────────────────
+CDN             Vercel
+POP             FRA  (Frankfurt, DE)
+Request ID      fra1::iad1::9vjgn-1778065638044-3f5943454c2f
+
+Status          200
+HTTP            HTTP/1.1
+Remote IP       198.169.2.65 (IPv4)
+
+Cache           HIT
+Age             0s
+
+Timings
+  DNS            1ms
+  TCP           17ms
+  TLS           47ms
+  TTFB         333ms
+  Total        395ms
+
+Probes
+  1: cache HIT     ttfb  333ms
+  2: cache HIT     ttfb  184ms
+
+Diagnosis
+  i CDN identified
+    5 of 5 expected debug headers exposed.
+  ✓ Cache HIT
+    Edge served from cache. Origin not contacted.
+  i Cache stayed warm
+    Both probes HIT. Second TTFB: 184ms.
+
+Debug headers exposed
+  5 of 5 expected for Vercel
+  x-vercel-cache, x-vercel-id, server, x-matched-path, age

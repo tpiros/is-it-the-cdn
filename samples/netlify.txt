@@ -1,0 +1,36 @@
+
+is-it-the-cdn  →  https://www.netlify.com/
+────────────────────────────────────────────────────────────────────────
+CDN             Netlify
+Server          aws-fra
+Request ID      01KQYFH1HH59CYJVNSMBFYD2M0
+
+Status          200
+HTTP            HTTP/1.1
+Remote IP       2a05:d014:58f:6200::1f5 (IPv6)
+
+Cache           HIT   raw: "Netlify Edge"; hit
+Age             22644s
+
+Timings
+  DNS           40ms
+  TCP           34ms
+  TLS           29ms
+  TTFB         140ms
+  Total        263ms
+
+Probes
+  1: cache HIT     ttfb  140ms
+  2: cache HIT     ttfb   45ms
+
+Diagnosis
+  i CDN identified
+    5 of 6 expected debug headers exposed.
+  ✓ Cache HIT
+    Edge served from cache. Origin not contacted.
+  i Cache stayed warm
+    Both probes HIT. Second TTFB: 45ms.
+
+Debug headers exposed
+  5 of 6 expected for Netlify
+  x-nf-request-id, server, cache-status, server-timing, age

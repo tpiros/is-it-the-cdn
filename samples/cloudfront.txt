@@ -1,0 +1,39 @@
+
+is-it-the-cdn  →  https://d0.awsstatic.com/logos/powered-by-aws.png
+────────────────────────────────────────────────────────────────────────
+CDN             AWS CloudFront
+POP             BUD  (Budapest, HU)
+Server          BUD50-P3
+Request ID      43B3wIAE2LCYVusCYjG1V-ueQuHRew7cuUTdPaAFpq6jksM6j7-fTg==
+
+Status          200
+HTTP            HTTP/1.1   alt-svc: h3=":443"; ma=86400
+Remote IP       2600:9000:211a:ee00:f:6dc5:9bc0:93a1 (IPv6)
+
+Cache           HIT   raw: Hit from cloudfront
+Age             681s
+
+Timings
+  DNS           59ms
+  TCP           10ms
+  TLS           21ms
+  TTFB         112ms
+  Total        112ms
+
+Probes
+  1: cache HIT     ttfb  112ms
+  2: cache HIT     ttfb   20ms
+
+Diagnosis
+  i CDN identified
+    4 of 4 expected debug headers exposed.
+  ✓ Cache HIT
+    Edge served from cache. Origin not contacted.
+  i Cache stayed warm
+    Both probes HIT. Second TTFB: 20ms.
+  i HTTP/3 available, not used
+    alt-svc advertises h3. This tool used HTTP/1.1 (Node's https module does not speak HTTP/3 yet).
+
+Debug headers exposed
+  4 of 4 expected for AWS CloudFront
+  via, x-amz-cf-pop, x-amz-cf-id, x-cache

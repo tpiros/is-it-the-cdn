@@ -1,0 +1,43 @@
+
+is-it-the-cdn  →  https://bunny.net/
+────────────────────────────────────────────────────────────────────────
+CDN             bunny.net
+POP             HU1  (Hungary (POP 1))
+Server          1127
+Request ID      15852a32121d1bdb56ed15ed62b00dd7
+Pull zone       876725
+Viewer GeoIP    HU
+
+Status          200
+HTTP            HTTP/1.1
+Remote IP       2a01:6ee0:30:c::1127:1 (IPv6)
+
+Cache           HIT
+Cached at       05/05/2026 14:42:56
+Origin status   200
+Origin fetch    0ms (reported by edge)
+
+Timings
+  DNS            1ms
+  TCP           14ms
+  TLS           19ms
+  TTFB          61ms
+  Total        116ms
+
+Probes
+  1: cache HIT     ttfb   61ms
+  2: cache MISS    ttfb  138ms  (cold / cache-busted)
+
+Diagnosis
+  i CDN identified
+    14 of 14 expected debug headers exposed.
+  ✓ Cache HIT
+    Edge served from cache. Origin not contacted.
+  ✓ TTFB 61ms
+    Excellent first-byte latency. Edge is doing its job.
+  i Cache effect: 77ms saved
+    Warm probe: 61ms. Cold probe: 138ms.
+
+Debug headers exposed
+  14 of 14 expected for bunny.net
+  cdn-cache, cdn-pullzone, cdn-requestcountrycode, cdn-storageserver, cdn-fileserver, cdn-proxyver, cdn-requestpullsuccess, cdn-requestpullcode, cdn-cachedat, cdn-edgestorageid, cdn-requestid, cdn-status, cdn-requesttime, server

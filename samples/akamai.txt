@@ -1,0 +1,33 @@
+
+is-it-the-cdn  →  https://www.akamai.com/
+────────────────────────────────────────────────────────────────────────
+CDN             Akamai
+
+Status          200
+HTTP            HTTP/1.1   alt-svc: h3=":443"; ma=93600
+Remote IP       2a02:26f0:f700:9::58dd:5c07 (IPv6)
+
+Cache           UNKNOWN
+
+Timings
+  DNS           47ms
+  TCP           15ms
+  TLS           25ms
+  TTFB         141ms
+  Total        190ms
+
+Probes
+  1: cache UNKNOWN ttfb  141ms
+  2: cache UNKNOWN ttfb   46ms
+
+Diagnosis
+  i CDN identified
+    4 of 6 expected debug headers exposed.
+  i Cache status not exposed
+    CDN did not include a cache-status header on this response.
+  i HTTP/3 available, not used
+    alt-svc advertises h3. This tool used HTTP/1.1 (Node's https module does not speak HTTP/3 yet).
+
+Debug headers exposed
+  4 of 6 expected for Akamai
+  x-akam-sw-version, akamai-grn, server-timing, x-akamai-transformed

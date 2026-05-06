@@ -1,0 +1,36 @@
+
+is-it-the-cdn  →  https://docs.fastly.com/
+────────────────────────────────────────────────────────────────────────
+CDN             Fastly
+POP             VIE  (Vienna, AT)
+Server          cache-vie6324-VIE
+
+Status          200
+HTTP            HTTP/1.1   alt-svc: h3-29=":443";ma=86400,h3-27=":443";ma=86400
+Remote IP       2a04:4e42::347 (IPv6)
+
+Cache           MISS   raw: MISS, MISS
+Age             619s
+
+Timings
+  DNS           28ms
+  TCP           11ms
+  TLS           25ms
+  TTFB         150ms
+  Total        202ms
+
+Probes
+  1: cache MISS    ttfb  150ms
+  2: cache MISS    ttfb  102ms
+
+Diagnosis
+  i CDN identified
+    6 of 8 expected debug headers exposed.
+  ! Cache MISS
+    Edge had to consult origin. Re-run to confirm cache warms (or use --cold to compare).
+  ✗ Cache did not warm
+    Second probe also MISS. Either uncacheable or cache configuration has issues.
+
+Debug headers exposed
+  6 of 8 expected for Fastly
+  x-served-by, x-cache, x-cache-hits, x-timer, server-timing, via
