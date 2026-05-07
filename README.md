@@ -8,6 +8,10 @@ node --experimental-strip-types src/cli.ts https://yoursite.com
 
 Zero runtime dependencies. Vendor-agnostic. Two HTTP requests per run. No sign-up, no telemetry, no daemon.
 
+**Why this exists.** CDN slowness is hard to debug. The diagnostic signals live in vendor-specific response headers with different names, so the tool reads them and gives you a clean answer to "is it the edge or my origin?" without arguing with a vendor.
+
+A side finding fell out of the methodology table below. The 7 supported CDNs publish wildly different amounts of debug detail (4 to 14 headers), and bunny.net is the only one that exposes origin response code and origin fetch time.
+
 ---
 
 ## Example output
